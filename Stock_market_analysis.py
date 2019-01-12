@@ -216,18 +216,6 @@ class Graph:
         volume1.show()
 
         macdgraph=plt.figure(3)
-        '''ax1=plt.subplot2grid((6,1),(0,0),rowspan=5,colspan=1)
-        
-        plt.plot(self.date[25:],self.ema26,label='EMA of period 26')
-        plt.plot(self.date[25:],self.ema12[14:],label='EMA of period 12')
-       
-        plt.xlabel('Date')
-        plt.ylabel('EMA values for MACD')
-        plt.xticks(self.make_list_for_xtick()[0],self.make_list_for_xtick()[1])
-        plt.title('MACD technical indicator')
-        plt.legend()
-
-        ax2=plt.subplot2grid((6,1),(5,0),rowspan=1,colspan=1,sharex=ax1)'''
         plt.title('MACD technical indicator')
         cnt=len(self.date)-len(self.ema9)
         ax_bar=plt.bar(self.date[cnt:],self.macd_histogram)
@@ -271,7 +259,7 @@ class Graph:
         rsi_graph.show()
 
         stock_price_with_simple_avg=plt.figure(1)
-        ax1=plt.subplot2grid((6,1),(0,0),rowspan=5,colspan=1)
+        ax1=plt.subplot2grid((8,1),(0,0),rowspan=5,colspan=1)
         plt.xlabel('Date')
         plt.ylabel('Stock value(in $)')
         plt.xticks(self.make_list_for_xtick()[0],self.make_list_for_xtick()[1])
@@ -281,14 +269,14 @@ class Graph:
         plt.plot(self.date[19:],self.twenty_day_simple_moving_avg,label='20 day simple moving average')
         plt.legend()
 
-        ax2=plt.subplot2grid((6,1),(5,0),rowspan=1,colspan=1,sharex=ax1)
+        ax2=plt.subplot2grid((8,1),(6,0),rowspan=1,colspan=1,sharex=ax1)
         ax2.bar(self.date,self.volume)
         plt.xticks(self.make_list_for_xtick()[0],self.make_list_for_xtick()[1])
         plt.ylabel('Volume')
         stock_price_with_simple_avg.show()
 
         stock_price_with_weighted_avg=plt.figure(0)
-        ax1=plt.subplot2grid((6,1),(0,0),rowspan=5,colspan=1)
+        ax1=plt.subplot2grid((8,1),(0,0),rowspan=5,colspan=1)
         plt.xlabel('Date')
         plt.ylabel('Stock value(in $)')
         plt.xticks(self.make_list_for_xtick()[0],self.make_list_for_xtick()[1])
@@ -298,7 +286,7 @@ class Graph:
         plt.plot(self.date[19:],self.twenty_day_weighted_moving_avg,label='20 day weighted moving average')
         plt.legend()
 
-        ax2=plt.subplot2grid((6,1),(5,0),rowspan=1,colspan=1,sharex=ax1)
+        ax2=plt.subplot2grid((8,1),(6,0),rowspan=1,colspan=1,sharex=ax1)
         ax2.bar(self.date,self.volume)
         plt.xticks(self.make_list_for_xtick()[0],self.make_list_for_xtick()[1])
         plt.ylabel('Volume')
